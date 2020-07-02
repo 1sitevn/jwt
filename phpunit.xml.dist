@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <includePath>.</includePath>
+        <env name="JWT_KEY" value=""/>
+        <env name="JWT_TOKEN" value=""/>
+        <env name="JWT_TOKEN_RSA" value=""/>
+    </php>
+</phpunit>

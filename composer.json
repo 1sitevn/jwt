@@ -1,0 +1,38 @@
+{
+  "name": "onesite/jwt",
+  "description": "Laravel passport token",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "1Site.vn",
+      "email": "hotro@1site.vn",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "firebase/php-jwt": "^5.2",
+    "onesite/core": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "OneSite\\JWT\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "files": [
+      "helpers.php"
+    ],
+    "psr-4": {
+      "OneSite\\JWT\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x.x-dev"
+    }
+  }
+}
