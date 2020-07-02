@@ -24,7 +24,17 @@ class JWT
      */
     public function encode($payload, $key, $alg = 'HS256')
     {
-        return \Firebase\JWT\JWT::encode($payload, $key, $alg);
+        try {
+            $data = \Firebase\JWT\JWT::encode($payload, $key, $alg);
+
+            return [
+                'data' => $data
+            ];
+        } catch (\Exception $exception) {
+            return [
+                'error' => $exception->getMessage()
+            ];
+        }
     }
 
     /**
@@ -35,6 +45,17 @@ class JWT
      */
     public function decode($jwt, $key, $alg = 'HS256')
     {
-        return \Firebase\JWT\JWT::decode($jwt, $key, [$alg]);
+        try {
+            $data = \Firebase\JWT\JWT::decode($jwt, $key, [$alg]);
+
+            return [
+                'data' => $data
+            ];
+        } catch (\Exception $exception) {
+            return [
+                'error' => $exception->getMessage()
+            ];
+        }
+
     }
 }
